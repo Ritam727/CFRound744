@@ -13,13 +13,6 @@ istream& operator >> (istream& i, vector<T>& v) {
 	return i;
 }
 
-template <typename T>
-ostream& operator << (ostream& o, const vector<T>& v) {
-	for(T j : v) o << j << " ";
-	o << endl;
-	return o;
-}
-
 struct Node {
 	int s, e, d;
 };

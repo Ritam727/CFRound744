@@ -7,19 +7,6 @@ typedef unsigned long long ull;
 #define pb push_back
 using namespace std;
 
-template <typename T>
-istream& operator >> (istream& i, vector<T>& v) {
-	for(T& j : v) i >> j;
-	return i;
-}
-
-template <typename T>
-ostream& operator << (ostream& o, const vector<T>& v) {
-	for(T j : v) o << j << " ";
-	o << endl;
-	return o;
-}
-
 struct segTree {
 	int size = 1;
 	vll tree;

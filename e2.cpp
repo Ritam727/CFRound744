@@ -54,13 +54,13 @@ struct segTree {
 	}
 };
 
-int search(vector<pair<ll, int>>& v, ll x) {
+int search(vll& v, ll x) {
 	int s = 0, e = v.size()-1;
 	while(e >= s) {
 		int m = s+(e-s)/2;
-		if(v[m].first == x) {
+		if(v[m] == x) {
 			return m;
-		} else if(v[m].first < x) {
+		} else if(v[m] < x) {
 			s = m+1;
 		} else {
 			e = m-1;
@@ -74,13 +74,13 @@ int main() {
 	cin.tie(NULL); cout.tie(NULL);
 	tests {
 		int n; cin >> n;
-		map<ll, int> m;
+		set<ll> s;
 		vll a(n);
 		for(int i = 0; i < n; i++) {
 			ll x; cin >> x;
-			a[i] = x; m[x] = 0;
+			a[i] = x; s.insert(x);
 		}
-		vector<pair<ll, int>> v(m.begin(), m.end());
+		vll v(s.begin(), s.end());
 		int ms = v.size();
 		segTree st; st.init(ms);
 		ll ans = 0;
